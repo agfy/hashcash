@@ -31,7 +31,7 @@ func main() {
 	r := gin.Default()
 	r.GET("/wow", GetWowLine)
 	r.GET("/challenge", GetChallenge)
-	err = r.Run("127.0.0.1:8000")
+	err = r.Run("0.0.0.0:8000")
 	if err != nil {
 		fmt.Println("error on main goroutine", err)
 	}

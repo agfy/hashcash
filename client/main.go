@@ -54,7 +54,7 @@ func SolutionValid(lastTimeUpdated time.Time, solution string) bool {
 }
 
 func GetChallenge() (string, error) {
-	resp, err := http.Get("http://127.0.0.1:8000/challenge")
+	resp, err := http.Get("http://172.17.0.1:8000/challenge")
 	if err != nil {
 		return "", err
 	}
@@ -117,7 +117,7 @@ func sha1Hash(s string) []byte {
 }
 
 func GetWow(solution string) (string, error) {
-	req, err := http.NewRequest("GET", "http://127.0.0.1:8000/wow", nil)
+	req, err := http.NewRequest("GET", "http://172.17.0.1:8000/wow", nil)
 	if err != nil {
 		return "", err
 	}
